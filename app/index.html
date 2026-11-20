@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Coast Cover Studio — GTA-style cover art from your photo</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">NEON COAST <span>Cover Studio</span></div>
+  <p class="tagline">Your photo, a caption, and thirty seconds: multi-panel poster cover art with a Vice City sunset grade, exported as a PNG. Nothing leaves your machine.</p>
+</header>
+<main class="app">
+  <section id="stage" class="stage" aria-label="Cover preview">
+    <canvas id="cover" width="1080" height="1080"></canvas>
+    <p class="hint">Drop a photo here, drag the cover to reposition it, scroll to zoom.</p>
+  </section>
+  <aside class="controls">
+    <div class="group">
+      <h2>Photo</h2>
+      <label class="file-label">Choose a photo <input id="photo" type="file" accept="image/*"></label>
+      <button id="sample" type="button" class="ghost">Use the sample photo</button>
+      <label>Hero zoom <input id="zoom" type="range" min="1" max="3" step="0.05" value="1"></label>
+    </div>
+    <div class="group">
+      <h2>Words</h2>
+      <label>Title <input id="title" type="text" maxlength="26" value="Neon Coast"></label>
+      <label>Caption <input id="caption" type="text" maxlength="34" value="Palm City Heat"></label>
+    </div>
+    <div class="group">
+      <h2>Style</h2>
+      <label>Panel layout
+        <select id="layout">
+          <option value="hero" selected>Hero Grid — one big panel, two close-ups</option>
+          <option value="mosaic">Mosaic — four panels</option>
+          <option value="strip">Film Strip — three vertical panels</option>
+        </select>
+      </label>
+      <label>Colour grade
+        <select id="grade">
+          <option value="sunset" selected>Sunset — orange into magenta</option>
+          <option value="neon">Neon — cyan and hot pink</option>
+          <option value="vice">Vice — pastel pink and teal</option>
+        </select>
+      </label>
+    </div>
+    <div class="group">
+      <h2>Export</h2>
+      <label>Post size
+        <select id="size">
+          <option value="1080x1080" selected>Square — 1080 x 1080</option>
+          <option value="1080x1350">Portrait — 1080 x 1350</option>
+          <option value="1920x1080">Landscape — 1920 x 1080</option>
+        </select>
+      </label>
+      <button id="export" type="button" class="primary">Export PNG</button>
+      <p id="status" role="status"></p>
+    </div>
+  </aside>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

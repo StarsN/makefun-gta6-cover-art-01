@@ -1,0 +1,4 @@
+# Local hand-in output from `MAKEFUN_OUTPUT_DIR=out node main.ts` — never committed.
+out/
+node_modules/
+.DS_Store
